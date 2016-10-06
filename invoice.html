@@ -57,7 +57,7 @@
   <script type="text/javascript">
     var dataObj = JSON.parse(localStorage.gpInvoiceData);
     $('section#rentalData b').text(dataObj.billee);
-    $('p#total > b#total').text(dataObj.total);
+    $('p#total > b#total').text('$' + dataObj.total);
     $('span#date span.date').text(dataObj.date);
     dataObj.locations.forEach(function(location){
       var newRow = $(
@@ -66,7 +66,7 @@
             <td class="middle">` + location.large + `</td>
             <td class="middle">` + location.medium + `</td>
             <td class="middle">` + location.small + `</td>
-            <td class="right">` + location.subtotal + `</td>
+            <td class="right">$` + location.subtotal + `</td>
         </tr>`
       );
       $('table').append(newRow);
