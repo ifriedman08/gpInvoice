@@ -1,0 +1,24 @@
+td.subtotal{
+  text-align: right;
+}
+
+table .address > input {
+  width:auto;
+}
+
+th.small, th.medium, th.large, th.subtotal{
+  padding-left: 1em;
+}
+
+td.small, td.medium, td.large{
+  text-align: right;
+  padding-left: 1em;
+}
+
+table input {
+  width: 2em;
+}
+
+table input.error {
+  border: 2px solid red;
+}

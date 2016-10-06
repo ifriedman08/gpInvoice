@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Invoice</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="stylesheets/invoiceStyles.css">
+    <script type="text/javascript" src="JavaScripts/jspdf.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Sans:400,700" rel="stylesheet">  </head>
+  <body>
+    <section id="content">
+      <section id="header">
+        <img src="Galeria-Paloma-logo.png" id="logo"/>
+        <p id="contact-info">
+          436 Boynton Ave<br>
+          Berkeley, CA 94707<br>
+          510.599.1863<br>
+          <a href="mailto:galeriapaloma@aol.com">galeriapaloma@aol.com</a>
+        </p>
+      </section>
+      <section id="rentalData">
+        <p>
+          <span id="billTo">Bill to <b></b></span>
+          <span id="date">Date : <span class="date"></span></span>
+        </p>
+        <br><br>
+        <table>
+          <tr id="headers">
+            <th class="left">
+              Address
+            </th>
+            <th class="large middle">
+              No. Large ($70)
+            </th>
+            <th class="medium middle">
+              No. Medium ($60)
+            </th>
+            <th class="small middle">
+              No. Small ($50)
+            </th>
+            <th class="subtotal right">
+              Subtotal
+            </th>
+            <th>
+
+            </th>
+          </tr>
+        </table>
+        <br><br>
+        <p id="total">
+          Total : <b id="total"></b>
+        </p>
+      </section>
+    </section>
+  </body>
+  <script type="text/javascript">
+    var dataObj = JSON.parse(localStorage.gpInvoiceData);
+    $('section#rentalData b').text(dataObj.billee);
+    $('p#total > b#total').text(dataObj.total);
+    $('span#date span.date').text(dataObj.date);
+    dataObj.locations.forEach(function(location){
+      var newRow = $(
+        `<tr>
+            <td>` + location.address + `</td>
+            <td class="middle">` + location.large + `</td>
+            <td class="middle">` + location.medium + `</td>
+            <td class="middle">` + location.small + `</td>
+            <td class="right">` + location.subtotal + `</td>
+        </tr>`
+      );
+      $('table').append(newRow);
+    })
+  </script>
+</html>

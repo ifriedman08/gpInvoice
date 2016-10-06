@@ -1,0 +1,65 @@
+* {
+font-family: 'Josefin Sans', sans-serif;
+}
+
+p#contact-info {
+  position: absolute;
+  top: 2em;
+  right: 1em;
+  text-align: right;
+}
+
+section#rentalData > p {
+  font-size: 1.6em;
+}
+
+span#date {
+  position: absolute;
+  right: 1em;
+}
+
+p#total {
+  position: absolute;
+  right: 1em;
+}
+
+th.left, td.left {
+  text-align: left;
+}
+
+th.middle, td.middle {
+  text-align: center;;
+}
+
+th.right, td.right {
+  text-align: right;
+}
+
+table {
+  margin-top: 2em;
+}
+
+th, td {
+  padding: 1.1em;
+}
+
+span#billTo {
+  position: absolute;
+  left:1em;
+}
+
+section#header {
+  margin-top: 2em;
+}
+
+section#rentalData {
+  margin-top: 4em;
+}
+
+button#pdf {
+  margin-top: 10em;
+}
+
+section#header, section#rentalData {
+  border-bottom: 1px lightgrey solid;
+}
